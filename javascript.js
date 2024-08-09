@@ -1,5 +1,13 @@
 let board = document.querySelector('.board');
 // create the grid
+
+function getRandomColor()
+{
+  let a = Math.random() * 250;
+  let b = Math.random() * 250;
+  let c = Math.random() * 250;
+  return "rgb(" + a + ", " + b + ", " + c + ")";
+}
 function createGrid(n)
 {
   // first calculate the size of pixel according to board size
@@ -12,12 +20,14 @@ function createGrid(n)
     square.style.minWidth = p;
     square.style.minHeight = p;
     square.style.backgroundColor = 'white';
+    square.style.opacity = 0;
     square.addEventListener('mouseover', (e) =>
     {
-      e.target.style.backgroundColor = 'black';
+      e.target.style.backgroundColor = getRandomColor();
+      let m = parseFloat(e.target.style.opacity);
+      e.target.style.opacity = (0.4 + m);
     });
     board.appendChild(square);
-    console.log('hi')
   }
 }
 
