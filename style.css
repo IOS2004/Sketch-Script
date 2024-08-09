@@ -1,0 +1,24 @@
+.board {
+  display: flex;
+  border: solid 5px black;
+  flex-wrap: wrap;
+  max-width: 960px;
+  padding: 0;
+  flex-grow: 0;
+  margin: 22px;
+}
+
+body {
+  background-color: blue;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+}
+
+#pixel {
+  padding: 0;
+  margin: 0;
+}
